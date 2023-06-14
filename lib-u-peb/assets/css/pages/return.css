@@ -1,0 +1,110 @@
+table{
+  text-align: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  border-spacing: 0cm;
+  }
+.retrunStack{
+  border-spacing: 0cm;
+}
+#borrowStat{
+  border-spacing: 0cm;
+}
+tbody{
+  width: 100%;
+  
+}
+#loanForm {
+  margin-bottom: 20px;
+  margin-right: 30px;
+  width: 60%;
+  float: left;
+}
+form {
+  display: flex;
+}
+#content {
+  display: flex;
+}
+#booknuminput {
+  width: 100%;
+  margin-top: 45px;
+}
+#book-number {
+  font-size: 20px;
+  color: #222222;
+  width: 80%;
+  border: none;
+  border-bottom: solid #aaaaaa 2px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  transition: border-bottom-color 0.3s ease-in-out;
+}
+#book-submit {
+  background-color: #009879;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+#returnBook {
+  background-color: #cf3910;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+th {
+  padding: 10px;
+  background-color: #009879;
+  color: #fff;
+}
+td {
+  background-color: #b1b1b222;
+  border-color: #aaa;
+  border-width: 1px;
+  color: #333;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+#bookImg {
+  width: 100px;
+  height: auto;
+}
+#cancle{
+  width: 30px;
+  display: block;
+  margin: 0 auto;
+}
+#bookReturn{
+  margin-bottom: 10px;
+}
+
+#returnBook:hover {
+  background-color: #aa2e0b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+#book-submit:hover {
+  background-color: #006752;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+#book-number:focus {
+  outline: none;
+  border-bottom-color: #009879;
+}

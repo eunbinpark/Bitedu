@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbit&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script></script>
+  <body>
+    <header><a href="/index.html">안녕하세요 BIT 도서관입니다.</a></header>
+    <div class="body">
+      <div class="menu">
+        <p class="title">menu</p>
+        <ul>
+          <a href="/index.html">
+            <li>메인</li>
+          </a>
+          <a href="/pages/lateBooks.html">
+            <li>미반납도서<span style="font-size: 0.8rem">(연체도서)</span></li>
+          </a>
+        </ul>
+      </div>
+      <div class="contents">
+        <div class="userInfo">
+          <span class="userName">박중영</span>
+          <span>회원님의 대출정보입니다.</span>
+          <p><span class="userStatus">대출가능</span>(2권/3권 대출중)</p>
+          <!-- <span class="userStatus">이 회원은 대출이 불가능 합니다.</span> -->
+        </div>
+        <div class="menuTabContainer">
+          <div class="menuTab">
+            <a href="bookStatus.html" class="menuItem">대출 현황</a>
+            <a href="bookLog.html" class="menuItem">대출 목록</a>
+            <a href="borrow.html" class="menuItem active">대출</a>
+            <a href="return.html" class="menuItem">반납</a>
+          </div>
+          <div>
+            <!--여기서 작업-->
+            <div class="content">
+              <div class="BorrowForm">
+                <div class="bookBorrow">
+                  <h2>도서 대출</h2>
+                  <form>
+                    <input
+                      class="loanBookNumber"
+                      type="text"
+                      placeholder="도서번호 입력 란"
+                      required
+                    />
+                    <input type="submit" class="bookSubmit" value="입력" />
+                    <input type="button" class="borrowBook" value="대출" />
+                  </form>
+                </div>
+                <!-- <table class="bookListTable">
+                <colgroup>
+                  <col style="width: 8%" />
+                  <col style="width: 11%" />
+                  <col style="width: 30%" />
+                  <col style="width: 10%" />
+                  <col style="width: 10%" />
+                  <col style="width: 15%" />
+                  <col style="width: 8%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>번호</th>
+                    <th>도서</th>
+                    <th>도서 이름</th>
+                    <th>저자</th>
+                    <th>출판사</th>
+                    <th>잔여수량</th>
+                    <th>취소</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img class="bookImg" src="/assets/images/이것이 자바다.jpg" alt="">
+                    </td>
+                    <td>이것이 자바다</td>
+                    <td>신용권, 임경균 저</td>
+                    <td>한빛미디어</td>
+                    <td>수량 : 2</td>
+                    <td>
+                      <a href="#">
+                        <img class="cancleImg" src="/assets/images/취소.png" alt="이것이 자바다!" />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table> -->
+              </div>
+
+              <div class="BorrowStatus">
+                <h2>대출 현황</h2>
+                <form>
+                  <table class="loanBookTable">
+                    <colgroup>
+                      <col style="width: 94px" />
+                      <col style="width: 208px" />
+                      <col style="width: 107px" />
+                      <col style="width: 155px" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>도서번호</th>
+                        <th>도서이름</th>
+                        <th>저자</th>
+                        <th>반납예정일자</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>123457</td>
+                        <td>SQL 쿡북</td>
+                        <td>엔서니 몰리나로, 로버트 더그래프</td>
+                        <td>2023-06-20</td>
+                      </tr>
+                      <tr>
+                        <td>123458</td>
+                        <td>업무에 바로 쓰는 SQL 튜닝</td>
+                        <td>양바른</td>
+                        <td>2023-06-15</td>
+                      </tr>
+                      <tr>
+                        <td>123456</td>
+                        <td>이것이 자바다</td>
+                        <td>신용권, 임경균 저</td>
+                        <td>2023-06-15</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

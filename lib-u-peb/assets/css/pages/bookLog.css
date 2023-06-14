@@ -1,0 +1,72 @@
+.loans_list{
+    width: 100%;
+    padding: 10px;
+}
+
+.loans_list_table{
+    width: 100%;
+    text-align: center;
+
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.loans_list_table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+}
+
+.loans_list_table th,
+.loans_list_table td {
+    padding: 12px 15px;
+    font-size: 16px;
+}
+
+.loans_list_table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.loans_list_table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.loans_list_table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.loans_list_table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.loans_list_table thead th[value="book_no"]{
+    width: 60px;
+}
+
+.loans_list_table thead th[value="author"]{
+    width: 200px;
+}
+
+.loans_list_table thead th[value="created_at"],
+.loans_list_table thead th[value="end_date_at"]{
+    width: 130px;
+}
+
+
+.loans_book_info{
+    display: flex;
+    align-items: center;
+}
+
+.loans_book_img{
+    width: 8vw;
+    min-width: 10px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+

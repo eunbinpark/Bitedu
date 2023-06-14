@@ -1,0 +1,118 @@
+.mainHeader {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputContainer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 40%;
+  margin: 40px 20px;
+  position: relative;
+}
+
+.inputUserNumber {
+  color: #222222;
+  height: 20px;
+  padding: 0;
+  padding-bottom: 10px;
+  width: 100%;
+  border: 0;
+  background: none;
+  position: relative;
+  border-bottom: solid #aaaaaa 1px;
+  text-align: center;
+  z-index: 5;
+}
+
+.inputUserNumber::placeholder {
+  color: #aaaaaa;
+}
+
+.inputUserNumber:focus {
+  outline: none;
+}
+
+.inputContainer > span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* right로만 바꿔주면 오 - 왼 */
+  background-color: #666;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+.inputContainer > label {
+  position: absolute;
+  color: #aaa;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  bottom: 8px;
+  transition: all 0.2s;
+}
+
+.inputUserNumber:focus ~ label,
+.inputUserNumber:valid ~ label {
+  font-size: 0.8rem;
+  bottom: 100%;
+  color: #666;
+  font-weight: bold;
+}
+
+.inputUserNumber:focus ~ span,
+.inputUserNumber:valid ~ span {
+  width: 100%;
+}
+
+.w-btn {
+  border: 0.5px solid #aaaaaa;
+  padding: 15px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.w-btn-green {
+  background-color: transparent;
+  color: #757575;
+}
+
+.w-btn:hover {
+  /* transform: scale(1.2); */
+  background-color: #a8d3c58c;
+  cursor: pointer;
+}
+
+.libInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.mainNotice {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.mainNoticeTitle {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.mainTop {
+  background-color: #f7f7f7;
+  padding: 30px 0px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 50px #c4c4c4;
+  margin: 20px 0px;
+}

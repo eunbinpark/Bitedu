@@ -1,0 +1,64 @@
+.overdue {
+  margin: 0;
+}
+
+.overdueSort {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.overdueSort input[type="text"] {
+  padding: 5px;
+  margin: auto 0px;
+  text-align: center;
+  height: 30px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  color: #333;
+  padding: 8px;
+  font-size: 16px;
+  transition: border-bottom-color 0.3s ease-in-out;
+}
+
+.overdueSort input[type="text"]:focus {
+  outline: none;
+  border-bottom-color: #009879;
+}
+#dropdownlate select {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+#dropdownlate select:hover {
+  background-color: #e6e6e6;
+}
+
+#dropdownlate select:focus {
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#dropdownlate select option {
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+#dropdownlate select option:hover {
+  background-color: #e6e6e6;
+}
+
+#dropdownlate select option:checked {
+  background-color: #b3e5fc;
+  color: #333;
+}

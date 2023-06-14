@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/pages/bookLog.css" />
+    <link rel="stylesheet" href="/assets/css/pages/UserRegister.css" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbit&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header><a href="/index.html">안녕하세요 BIT 도서관입니다.</a></header>
+    <div class="body">
+      <div class="menu">
+        <p class="title">menu</p>
+        <ul>
+          <a href="/index.html"><li>메인</li></a>
+          <a href="/pages/lateBooks.html"
+            ><li>
+              미반납도서<span style="font-size: 0.8rem">(연체도서)</span>
+            </li></a
+          >
+          <a href="/pages/UserRegister.html" class="activeMenu"
+            ><li>회원가입</li></a
+          >
+        </ul>
+      </div>
+      <div class="contents">
+        <div class="userInfo">
+          <span class="userName">박중영</span>
+          <span>회원님의 대출정보입니다.</span>
+          <p><span class="userStatus">대출가능</span>(0권/3권 대출중)</p>
+        </div>
+        <div class="menuTabContainer">
+          <div class="menuTab">
+            <a href="bookStatus.html" class="menuItem">대출 현황</a>
+            <a href="bookLog.html" class="menuItem">대출 목록</a>
+            <a href="borrow.html" class="menuItem">대출</a>
+            <a href="return.html" class="menuItem">반납</a>
+          </div>
+          <div>
+            <!--여기서 작업-->
+            <div class="userInfo">
+              <label for="">기본정보 입력</label>
+              <p>아이디<input type="text" id="username" /></p>
+              <button id="checkUsername">아이디 중복확인</button>
+              <p id="usernameStatus"></p>
+              <p>패스워드<input type="password" id="password" /></p>
+              <p>패스워드 확인<input type="password" id="confirmPassword" /></p>
+              <p>이름<input type="text" id="name" /></p>
+              <p>전화번호<input type="text" id="phone" /></p>
+              <p>주소<input type="text" id="address" /></p>
+              <p>
+                이메일
+                <input type="email" id="email" />
+                <select id="domain">
+                  <option value="">직접 입력</option>
+                  <option value="gmail.com">gmail.com</option>
+                  <option value="naver.com">naver.com</option>
+                  <option value="daum.net">daum.net</option>
+                  <!-- 도메인 목록을 필요에 따라 추가할 수 있습니다. -->
+                </select>
+              </p>
+            </div>
+
+            <div class="userInfoGender">
+              <p><label for="">성별</label></p>
+              <label
+                ><input
+                  type="radio"
+                  name="radioGroup"
+                  value="women"
+                  onchange="handleRadioChange(event)"
+                />여성</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="radioGroup"
+                  value="men"
+                  onchange="handleRadioChange(event)"
+                />남성</label
+              >
+            </div>
+
+            <div class="userInfoBirth">
+              <p><label for="">생년월일</label></p>
+              <label for=""><input type="text" />년</label>
+              <select name="" id="">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <label for="">월</label>
+              <select name="" id="">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+              <label for="">일</label>
+            </div>
+
+            <div class="userInfoJob">
+              <p><label for="">직업</label></p>
+              <select name="" id="">
+                <option value="학생">학생</option>
+                <option value="대학생">대학생</option>
+                <option value="직장인">직장인</option>
+                <option value="주부">주부</option>
+                <option value="기타">기타</option>
+              </select>
+            </div>
+
+            <div class="userInfoGenre">
+              <p><label for="">선호장르</label></p>
+              <label for=""><input type="checkbox" />철학</label>
+              <label for=""><input type="checkbox" />종교</label>
+              <label for=""><input type="checkbox" />사회과학</label>
+              <label for=""><input type="checkbox" />자연과학</label>
+              <label for=""><input type="checkbox" />기술과학</label>
+              <label for=""><input type="checkbox" />예술</label>
+              <label for=""><input type="checkbox" />언어</label>
+              <label for=""><input type="checkbox" />문학</label>
+              <label for=""><input type="checkbox" />역사</label>
+            </div>
+
+            <div class="userInfoIntroduce">
+              <p><label for="">한줄소개</label></p>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+
+            <input type="submit" name="" id="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/booklog.js"></script>
+    <script src="/assets/js/userRegister.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function test4(temp) {
+        let numbers = temp;
+        let sum = 0;
+
+        while (numbers != 0) {
+          let splitNumber = numbers % 10;
+          console.log(splitNumber);
+          numbers = parseInt(numbers / 10);
+          //   console.log(numbers);
+          sum += splitNumber;
+        }
+        console.log(sum);
+      }
+      function test3(a, b) {
+        return a + b;
+      }
+      function test2() {
+        return 10;
+      }
+
+      function test1() {
+        let number = test3(2, 3);
+        for (let i = 0; i < number; i++) {
+          if (i % 2 == 0) {
+            console.log(i);
+          }
+        }
+      }
+
+      function test5(){
+        let eles = document.getElementsByName('langs');
+        console.log(eles.length);
+        let count = 0;
+        for (let i = 0; i<eles.length; i++){
+            if(eles[i].checked){
+                count++;
+                console.log(eles[i].value);
+            }
+        }
+
+        for (let ele of eles){
+            if(ele.checked){
+                console.log(ele.value);
+            }
+        }
+        if(count<2){
+            console.log('over 2 clicked')
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="test5()">실행</button>
+    <input type="checkbox" name="langs" id="" value="java">java</input>
+    <input type="checkbox" name="langs" id="" value="javaScript">javaScript</input>
+    <input type="checkbox" name="langs" id="" value="nodeJs">nodeJs</input>
+    <input type="checkbox" name="langs" id="" value="react">react</input>
+  </body>
+</html>

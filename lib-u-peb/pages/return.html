@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header><a href="/index.html">안녕하세요 BIT 도서관입니다.</a></header>
+    <div class="body">
+      <div class="menu">
+        <p class="title">menu</p>
+        <ul>
+          <a href="/index.html"><li>메인</li></a>
+          <a href="/pages/lateBooks.html"
+            ><li>
+              미반납도서<span style="font-size: 0.8rem">(연체도서)</span>
+            </li></a
+          >
+        </ul>
+      </div>
+      <div class="contents">
+        <div class="userInfo">
+          <span class="userName">박중영</span>
+          <span>회원님의 대출정보입니다.</span>
+          <p><span class="userStatus">대출가능</span>(0권/3권 대출중)</p>
+        </div>
+        <div class="menuTabContainer">
+          <div class="menuTab">
+            <a href="bookStatus.html" class="menuItem">대출 현황</a>
+            <a href="bookLog.html" class="menuItem">대출 목록</a>
+            <a href="borrow.html" class="menuItem">대출</a>
+            <a href="return.html" class="menuItem active">반납</a>
+          </div>
+          <div>
+            <!--여기서 작업-->
+            <div id="content">
+              <div id="loanForm">
+                <div id="bookReturn">
+                  <h2>도서 반납</h2>
+                  <form>
+                    <input
+                      type="text"
+                      placeholder="도서번호 입력 란"
+                      id="book-number"
+                      name="book-number"
+                      required
+                    />
+                    <span></span>
+                    <input type="submit" id="book-submit" value="입력" />
+                    <input type="button" id="returnBook" value="반납" />
+                  </form>
+                </div>
+                <table class="retrunStack">
+                  <colgroup>
+                    <col style="width: 8%" />
+                    <col style="width: 11%" />
+                    <col style="width: 30%" />
+                    <col style="width: 10%" />
+                    <col style="width: 10%" />
+                    <col style="width: 15%" />
+                    <col style="width: 8%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>도서 사진</th>
+                      <th>도서이름</th>
+                      <th>저자</th>
+                      <th>출판사</th>
+                      <th>대출일자</th>
+                      <th>취소</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <img
+                          id="bookImg"
+                          src="/assets/images/이것이 자바다.jpg"
+                          alt="이것이 자바다!"
+                        />
+                      </td>
+                      <td>This is Java!</td>
+                      <td>
+                        신용권,
+                        <nav></nav>
+                        임경균
+                      </td>
+                      <td>
+                        한빛
+                        <nav></nav>
+                        미디어
+                      </td>
+                      <td>2023-06-08</td>
+                      <td>
+                        <a href="#">
+                          <img
+                            id="cancle"
+                            src="/assets/images/취소.png"
+                            alt="이것이 자바다!"
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>
+                        <img
+                          id="bookImg"
+                          src="/assets/images/sql튜닝.jpg"
+                          alt="sql튜닝"
+                        />
+                      </td>
+                      <td>SQL튜닝</td>
+                      <td>양바른</td>
+                      <td>
+                        한빛
+                        <nav></nav>
+                        미디어
+                      </td>
+                      <td style="color: red">
+                        2023-05-22
+                        <nav>7일 연체</nav>
+                      </td>
+                      <td>
+                        <a href="#">
+                          <img
+                            id="cancle"
+                            src="/assets/images/취소.png"
+                            alt="취소"
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="loan-status">
+                <h2>반납 현황</h2>
+                <form>
+                  <table id="borrowStat">
+                    <colgroup>
+                      <col style="width: 94px" />
+                      <col style="width: 208px" />
+                      <col style="width: 107px" />
+                      <col style="width: 155px" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>도서번호</th>
+                        <th>도서이름</th>
+                        <th>저자</th>
+                        <th>반납일자</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>234789</td>
+                        <td>SQL 튜닝</td>
+                        <td>송윤서</td>
+                        <td>2023-06-09</td>
+                      </tr>
+                      <tr>
+                        <td>123978</td>
+                        <td>자바 ORM 표준 JPA 프로그래밍</td>
+                        <td>김영한</td>
+                        <td>2023-06-09</td>
+                      </tr>
+                      <tr>
+                        <td>234771</td>
+                        <td>엘라스틱서치 실무 가이드</td>
+                        <td>권택환, 김동우, 김홍래, 박진현, 최용호</td>
+                        <td>2023-06-09</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

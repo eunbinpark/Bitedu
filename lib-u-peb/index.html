@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbit&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>안녕하세요 BIT 도서관입니다.</header>
+    <div class="body">
+      <div class="menu">
+        <p class="title">menu</p>
+        <ul>
+          <a href="/index.html" class="activeMenu"><li>메인</li></a>
+          <a href="/pages/lateBooks.html"
+            ><li>
+              미반납도서<span style="font-size: 0.8rem">(연체도서)</span>
+            </li></a
+          >
+          <a href="/pages/UserRegister.html"><li>회원가입</li></a>
+        </ul>
+      </div>
+
+      <div class="contents">
+        <div class="mainTop">
+          <p class="mainNoticeTitle">📚 비트 도서관 도서관리 시스템</p>
+          <p class="mainNotice">
+            회원별 조회를 위해서는 아래에 회원번호를 입력하세요.
+          </p>
+          <div class="mainHeader">
+            <div class="inputContainer">
+              <input type="text" class="inputUserNumber" required />
+              <label>회원번호</label>
+              <span></span>
+            </div>
+            <a href="/pages/bookStatus.html"
+              ><button class="w-btn w-btn-green">조회</button></a
+            >
+          </div>
+        </div>
+        <div class="libInfo">
+          <img src="assets/images/chart.png" />
+          <div>
+            <h2>도서관 정보</h2>
+            <p>대출한 총 권수: <span id="total-loans">0</span></p>
+            <p>대출 이용 회원 수: <span id="total-users">0</span></p>
+            <p>미반납 총 권수: <span id="total-overdue">0</span></p>
+            <p>반납 총 권수: <span id="total-returns">0</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <p>도서관 홈페이지에 오신 것을 환영합니다.</p>
+    </div>
+  </body>
+</html>

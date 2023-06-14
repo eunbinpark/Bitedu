@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    <title>Document</title>
+  </head>
+  <body>
+
+    <header><a href="/index.html">안녕하세요 BIT 도서관입니다.</a></header>
+    <div class="body">
+      <div class="menu">
+        <p class="title">menu</p>
+        <ul>
+          <a href="/index.html"><li>메인</li></a>
+          <a href="/pages/lateBooks.html"><li>미반납도서<span style="font-size: 0.8rem;">(연체도서)</span></li></a>
+        </ul>
+      </div>
+      <div class="contents">
+        <div class="userInfo">
+          <span class="userName">박중영</span>
+          <span>회원님의 대출정보입니다.</span>
+          <p><span class="userStatus">대출가능</span>(0권/3권 대출중)</p>
+        </div>
+        <div class="menuTabContainer">
+          <div class="menuTab">
+            <a href="bookStatus.html" class="menuItem active">대출 현황</a>
+            <a href="bookLog.html" class="menuItem">대출 목록</a>
+            <a href="borrow.html" class="menuItem menuItemBorrow">대출</a>
+            <a href="return.html" class="menuItem menuItemBorrow">반납</a>
+          </div>
+          <div>
+             <div class="loans_list">
+            <table class="loans_list_table">
+                <thead>
+                    <tr>
+                      <th>No.</th>
+                <th>도서 사진</th>
+                <th>책 번호</th>
+                <th>책 제목</th>
+                <th>저자</th>
+                <th>대출 기간</th>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>1782</td>
+                  <td>
+                    <img
+                      src="/assets/images/sql튜닝.jpg"
+                      style="width: 8vw; min-width: 10px"
+                    />
+                  </td>
+                  <td>업무에서 바로 쓰는 SQL튜닝</td>
+                  <td>양바른</td>
+                  <td>2023-06-05 ~ 2023-06-12</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>4532</td>
+                  <td>
+                    <img
+                      src="/assets/images/코드로 배우는 스프링부트 웹프로젝트.jpg"
+                      style="width: 8vw; min-width: 10px"
+                    />
+                  </td>
+                  <td>코드로 배우는 스프링부트 웹프로젝트</td>
+                  <td>구멍가게 코딩단</td>
+                  <td>2023-06-05 ~ 2023-06-12</td>
+                </tr>
+          
+                <tr class="overDue" style="color: red">
+                  <td>3</td>
+                  <td>1234</td>
+                  <td>
+                    <img
+                      src="/assets/images/이것이 자바다.jpg"
+                      style="width: 8vw; min-width: 10px"
+                    />
+                  </td>
+                  <td>이것이 자바다</td>
+                  <td>신용권</td>
+                  <td>2023-06-01 ~ 2023-06-08</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

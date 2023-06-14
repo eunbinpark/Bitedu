@@ -1,0 +1,128 @@
+table {
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    border-spacing: 0cm;
+}
+
+tbody {
+    width: 100%;
+
+}
+
+form {
+    display: flex;
+}
+
+th {
+    padding: 10px;
+    background-color: #009879;
+    color: #fff;
+}
+
+td {
+    background-color: #b1b1b222;
+    border-color: #aaa;
+    border-width: 1px;
+    color: #333;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.content {
+    display: flex;
+}
+
+.BorrowForm {
+    margin-bottom: 20px;
+    margin-right: 30px;
+    width: 60%;
+    float: left;
+}
+
+.bookBorrow {
+    margin-bottom: 10px;
+}
+
+.loanBookNumber {
+    font-size: 20px;
+    color: #222222;
+    width: 80%;
+    border: none;
+    border-bottom: solid #aaaaaa 2px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-bottom-color 0.3s ease-in-out;
+}
+
+.loanBookNumber:focus {
+    outline: none;
+    border-bottom-color: #009879;
+}
+
+.bookSubmit {
+    background-color: #009879;
+
+    /* 대출 불가능일 때 막아 놓을거 */
+    /* background-color: #aaaaaa; */
+
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.bookSubmit:hover {
+    background-color: #006752;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.borrowBook {
+    background-color: #cf3910;
+    /* 대출 불가능일 때 막아 놓을거 */
+    /* background-color: #aaaaaa; */
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.borrowBook:hover {
+    background-color: #aa2e0b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bookListTable {
+    border-spacing: 0cm;
+}
+
+.bookImg {
+    width: 100px;
+    height: auto;
+}
+
+.cancleImg {
+    width: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.loanBookTable {
+    border-spacing: 0cm;
+}
