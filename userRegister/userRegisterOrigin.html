@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="userRegisterOrigin.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="logo">SIGN UP</h1>
+      </header>
+      <main class="mainContainer">
+        <div class="authForm">
+          <label class="inputLabel">Email</label>
+          <LoginInput
+            type="email"
+            placeholder="Type your email"
+            onChange="{onChangeHandle}"
+            name="email"
+          >
+            <FiUser />
+          </LoginInput>
+          <div class="errorMsg">{errorMessages.email}</div>
+
+          <label class="inputLabel">Password</label>
+          <LoginInput
+            type="password"
+            placeholder="Type your password"
+            onChange="{onChangeHandle}"
+            name="password"
+          >
+            <FiLock />
+          </LoginInput>
+          <div class="errorMsg">{errorMessages.password}</div>
+
+          <label class="inputLabel">Name</label>
+          <LoginInput
+            type="text"
+            placeholder="Type your name"
+            onChange="{onChangeHandle}"
+            name="name"
+          >
+            <BiRename />
+          </LoginInput>
+          <div class="errorMsg">{errorMessages.name}</div>
+
+          <button class="loginButton" onClick="{registeSubmit}">
+            REGISTER
+          </button>
+        </div>
+      </main>
+
+      <div class="signupMessage">Already a user?</div>
+
+      <footer>
+        <div class="register">LOGIN</div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -4,11 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010e2f48-b53f-40fe-baf0-cc1a5ace4260" name="Changes" comment="대출 현황 페이지2" />
+    <list default="true" id="010e2f48-b53f-40fe-baf0-cc1a5ace4260" name="Changes" comment="대출 현황 페이지2">
+      <change afterPath="$PROJECT_DIR$/../CommunityCenter.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/data/book_copy.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/data/book_info.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/data/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/data/library_front.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/sql/book1.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/dao/LibraryDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/dto/BookDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/service/LibraryBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/util/ConnectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/util/ConnectionManager2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/util/DateCalculation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/vo/BookVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Sample/SimpleLibrarySample/src/bitedu/bipa/quiz/vo/UserVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SimpleLibraryPEB.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CommunityCenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DatabaseWork.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -23,6 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/eunbin/workspace/lib-u-peb",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686187610248</updated>
       <workItem from="1686187611371" duration="8641000" />
+      <workItem from="1687494555107" duration="29000" />
     </task>
     <task id="LOCAL-00001" summary="대출 현황 페이지">
       <created>1686204516839</created>

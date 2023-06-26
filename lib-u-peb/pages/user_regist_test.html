@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>User Registration</title>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: 20px auto;
+      }
+      td {
+        width: 150px;
+        height: 50px;
+        padding: 5px;
+        font-size: 20px;
+        /* text-align: center; */
+      }
+
+      input,
+      select {
+        font-size: 20px;
+      }
+      .data_ui {
+        width: 450px;
+        height: 50px;
+      }
+
+      button {
+        font-size: 15px;
+        margin: 5px;
+      }
+
+      #sending {
+        text-align: center;
+      }
+
+      input.poster :disabled {
+        background: gray;
+      }
+
+      #form {
+        font-size: 30px;
+      }
+    </style>
+    <script>
+      //아이디 확인
+      document
+        .getElementById("btn_check_id")
+        .addEventListener("click", function () {
+          var userId = document.getElementById("user_id").value;
+          var userIdStatus = document.getElementById("user_id_status");
+          var userIdRegex = /^[a-zA-Z0-9]{8,20}$/;
+
+          if (!userIdRegex.test(userId)) {
+            userIdStatus.textContent =
+              "아이디는 8자에서 20자 사이의 영어, 숫자만 사용할 수 있습니다.";
+          } else {
+            userIdStatus.textContent = "사용 가능한 아이디입니다.";
+          }
+        });
+      //비밀번호 확인
+      document
+        .getElementById("confirm_password")
+        .addEventListener("keyup", function () {
+          var password = document.getElementById("password").value;
+          var confirmPassword = this.value;
+          var passwordMatch = document.getElementById("password_match");
+
+          if (password !== confirmPassword) {
+            passwordMatch.textContent =
+              "패스워드가 다릅니다. 다시 입력해주세요.";
+          } else {
+            passwordMatch.textContent = "";
+          }
+        });
+      //우편번호 찾기
+      document
+        .getElementById("btn_check_address")
+        .addEventListener("click", function () {
+          var address1 = document.getElementById("address1");
+          var address2 = document.getElementById("address2");
+
+          address1.textContent = "부산 해운대구 센텀동로 41 센텀벤처타운";
+          address2.textContent = "7층 금정산2";
+        });
+      //필수입력 확인
+      document
+        .getElementById("btn_submit")
+        .addEventListener("click", function () {
+          var username = document.getElementById("username").value;
+          var nameCheck = document.getElementById("name_check");
+          var address = document.getElementById("address1").value;
+          var addressCheck = document.getElementById("address_check");
+
+          if (username == null) {
+            nameCheck.textContent = "이름은 필수 입력사항입니다.";
+          }
+
+          if (address == null) {
+            addressCheck.textContent = "주소는 필수 입력사항입니다.";
+          }
+        });
+    </script>
+  </head>
+  <body>
+    <form action="">
+      <table>
+        <tr>
+          <th colspan="5" id="form">회원가입양식</th>
+        </tr>
+        <tr>
+          <th>구분</th>
+          <th class="data_ui" colspan="2">데이터입력</th>
+          <th>유효성검사</th>
+          <th>비고</th>
+        </tr>
+        <tr>
+          <td>아이디</td>
+          <td colspan="2">
+            <input type="text" id="user_id" /><button id="btn_check_id">
+              아이디확인
+            </button>
+          </td>
+          <td>8자리 , 첫글자 영문소문자</td>
+          <td id="user_id_status"></td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+          <td colspan="2">
+            <input type="text" name="" id="password" />
+          </td>
+          <td rowspan="2">비밀번호 일치</td>
+          <td id="password_match"></td>
+        </tr>
+        <tr>
+          <td>비번확인</td>
+          <td colspan="2">
+            <input type="text" id="confirm_password" />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>이름</td>
+          <td colspan="2">
+            <input type="text" id="username" />
+          </td>
+          <td>필수입력</td>
+          <td id="name_check"></td>
+        </tr>
+        <tr>
+          <td>우편번호</td>
+          <td colspan="2">
+            <button id="btn_check_address">우편번호찾기</button>
+          </td>
+          <td rowspan="3">필수입력</td>
+          <td id="address_check"></td>
+        </tr>
+        <tr>
+          <td>주소1</td>
+          <td colspan="2" id="address1"><aa/td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>주소2</td>
+          <td colspan="2" id="address2"></td>
+          <td></td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td>생년월일</td>
+          <td colspan="2">
+            <div class="userInfoBirth">
+              <label for=""><input type="text" placeholder="년도" />-</label>
+              <select name="" id="">
+                <option value="00">월</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <label for="">-</label>
+              <select name="" id="">
+                <option value="00">일</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+            </div>
+          </td>
+          <td>년도는 1900~2050, 월은 1~12, 일은 1~31</td>
+          <td>2개중 하나 선택</td>
+        </tr>
+        <tr>
+          <td>성별</td>
+          <td colspan="2">
+            <div class="userInfoGender">
+              <label
+                ><input
+                  type="radio"
+                  name="radioGroup"
+                  value="women"
+                  onchange="handleRadioChange(event)"
+                />여성</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="radioGroup"
+                  value="men"
+                  onchange="handleRadioChange(event)"
+                />남성</label
+              >
+            </div>
+          </td>
+          <td>필수 선택</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>관심분야</td>
+          <td colspan="2">
+            <div class="userInfoGenre">
+              <label for=""><input type="checkbox" />문학</label>
+              <label for=""><input type="checkbox" />어학</label>
+              <label for=""><input type="checkbox" />정보IT</label>
+              <label for=""><input type="checkbox" />과학</label>
+              <label for=""><input type="checkbox" />수학</label>
+              <label for=""><input type="checkbox" />예술</label>
+            </div>
+          </td>
+          <td>2~3개 사이 선택</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>자기소개</td>
+          <td colspan="2">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="5" id="sending">
+            <input type="submit" value="가입" id="btn_submit" />
+            <input type="reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
