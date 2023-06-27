@@ -48,6 +48,7 @@
         	color: red;
         }
     </style>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -56,7 +57,7 @@
 				let month = $('#month').val();
 				let days = new Date(parseInt(year),month,0).getDate();
 				alert(days);
-				let day_of_month = "<select id='' name=''><option>--일--</option>"
+				let day_of_month = "<select id='' name='days'><option>--일--</option>"
 				for(let i=0;i<days;i++){
 					day_of_month += `<option value='${i+1}'>${i+1}</option>`;
 				}
@@ -80,7 +81,7 @@
 							} else {
 								$('#message').html('사용할 수 있는 아이디입니다.');
 							}
-							$('#flag').val("true");
+							//$('#flag').val("true");
 						},
 						error : function(){
 							
@@ -108,17 +109,23 @@
 			$('#sending').on('click',function(e){
 							
 				let result = validateData();
-				result = false;
+				result = true;
 				if(!result){
 					e.preventDefault();
 				}
 			});
 			
 			$('#find_zipcode').on('click',function(e){
-				$('#postal').val("12345");
-				$('#addr1').val('부산시 해운대구 좌동');
-				$('#addr2').attr('disabled',false);
-				$('#addr2').val('부산산업진흥원 5층 금강산');
+				
+				new daum.Postcode({
+					oncomplete:function(data){
+						$('#postal').val(data.zonecode);
+						$('#addr1').val(data.address);
+						$('#addr2').attr('readonly',false);
+						$('#addr2').focus();
+							
+					}
+				}).open();
 				
 				e.preventDefault();
 			});
@@ -126,26 +133,29 @@
 	</script>
 </head>
 <body>
-<form action="/MemberSample/memberController" method="post" name="userId">
+<form action="/MemberSample/memberController" method="post">
     <table>
         <tr><th colspan="5" id="form">회원가입양식</th></tr>
         <tr><th>구분</th><th class="data_ui" colspan="2">데이터입력</th><th>유효성검사</th><th>비고</th></tr>
         <tr>
             <td>아이디</td>
-            <td colspan="2"><input type="text" id="user_id" name="userId"><button id="btn_check_id">아이디확인</button></td>
+            <td colspan="2">
+            	<input type="text" id="user_id" name="user_id">
+            	<button id="btn_check_id">아이디확인</button>
+            </td>
             <td>8자리 , 첫글자 영문소문자</td><td id="message"></td></tr>
-        <tr><td>비밀번호</td><td colspan="2"><input type="text" id="pwd1" name="pwd1"></td><td rowspan="2">비밀번호 일치</td><td><input type="hidden" id="flag" value="false"></td></tr>
-        <tr><td>비번확인</td><td colspan="2"><input type="text" id="user_id"></td><td></td></tr>
-        <tr><td>이름</td><td colspan="2"><input type="text" id="user_name" name="userName"></td><td>필수입력</td><td></td></tr>
-        <tr><td>우편번호</td><td colspan="2"><input type="text" id="postal" disabled><button id="find_zipcode">우편번호찾기</button></td><td rowspan="3">필수입력</td><td></td></tr>
-        <tr><td>주소1</td><td colspan="2"><input type="text" id="addr1" size="35" disabled></td><td></td></tr>
-        <tr><td>주소2</td><td colspan="2"><input type="text" id="addr2" size="35" disabled></td><td></td><tr>
+        <tr><td>비밀번호</td><td colspan="2"><input type="password" id="pwd1" name="pwd"></td><td rowspan="2">비밀번호 일치</td><td><input type="hidden" id="flag" value="false"></td></tr>
+        <tr><td>비번확인</td><td colspan="2"><input type="text" id="pwd2"></td><td></td></tr>
+        <tr><td>이름</td><td colspan="2"><input type="text" id="user_name" name="user_name"></td><td>필수입력</td><td></td></tr>
+        <tr><td>우편번호</td><td colspan="2"><input type="text" id="postal" name="zipcode" readonly><button id="find_zipcode">우편번호찾기</button></td><td rowspan="3">필수입력</td><td></td></tr>
+        <tr><td>주소1</td><td colspan="2"><input type="text" id="addr1" size="35" name="addr1" readonly></td><td></td></tr>
+        <tr><td>주소2</td><td colspan="2"><input type="text" id="addr2" size="35" name="addr2" readonly></td><td></td><tr>
         <tr>
             <td>생년월일</td>
             <td colspan="2">
-                <input type="text" placeholder="년도" size="5" id="year">
+                <input type="text" placeholder="년도" size="5" id="year" name="year">
                 -
-                <select id="month">
+                <select id="month" name="month">
                     <option>-- 월 --</option>
                     <option value='1'>1</option>
                     <option value='2'>2</option>
@@ -155,30 +165,26 @@
                 </select>
                 -
                 <span id="days"></span>
-                 
-                <br><br>
-                <input type="text" id="" placeholder="년도" size="5">-
-                <input type="text" id="" placeholder="월" size="5">-
-                <input type="text" id="" placeholder="일" size="5">
+
             </td><td>년도는 1900~2050, 월은 1~12, 일은 1~31</td><td>2개중 하나 선택</td></tr>
         <tr>
             <td>성별</td>
             <td colspan="2">
-                <input type="radio" name="gender">남
-                <input type="radio" name="gender">여
+                <input type="radio" name="gender" value="M">남
+                <input type="radio" name="gender" value="F">여
             </td><td>필수 선택</td><td></td></tr>
         <tr>
             <td>관심분야</td>
             <td colspan="2">
-                <input type="checkbox" name="interests">문학
-                <input type="checkbox" name="interests">어학
-                <input type="checkbox" name="interests">정보IT<br>
-                <input type="checkbox" name="interests">과학
-                <input type="checkbox" name="interests">수학
-                <input type="checkbox" name="interests">예술
+                <input type="checkbox" name="interests" value="0">문학
+                <input type="checkbox" name="interests" value="1">어학
+                <input type="checkbox" name="interests" value="2">정보IT<br>
+                <input type="checkbox" name="interests" value="3">과학
+                <input type="checkbox" name="interests" value="4">수학
+                <input type="checkbox" name="interests" value="5">예술
             </td><td>2~3개 사이 선택</td><td></td>
         </tr>
-        <tr><td>자기소개</td><td colspan="2"><textarea cols="50" rows="5"></textarea></td><td></td><td></td></tr>    
+        <tr><td>자기소개</td><td colspan="2"><textarea cols="50" rows="5" name="introduce"></textarea></td><td></td><td></td></tr>    
         <tr><td colspan="5" id="sending"><input type="submit" value="가입"> <input type="reset"></td></tr>
     </table>
 </form>

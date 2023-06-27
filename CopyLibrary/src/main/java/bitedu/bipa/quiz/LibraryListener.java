@@ -2,6 +2,7 @@ package bitedu.bipa.quiz;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -69,7 +70,9 @@ public class LibraryListener extends HttpServlet {
 	private String getData(String userId) {
 		String result = null;
 		LibraryBookService lbs = new LibraryBookService();
-		HashMap<String, Object> data = lbs.getUserStatus(userId, "6"); 
+		LocalDate now = LocalDate.now();
+		
+		HashMap<String, Object> data = lbs.getUserStatus(userId, now.getMonthValue()+""); 
 		HashMap<String,UserBookStatusVO>  map1 = (HashMap<String,UserBookStatusVO>)data.get("userInfo");
 		HashMap<String,ArrayList<BookUseStatusVO>>  map2 = (HashMap<String,ArrayList<BookUseStatusVO>>)data.get("bookInfo");
 		
