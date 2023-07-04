@@ -1,6 +1,8 @@
 <%@page import="bitedu.bipa.member.vo.BookCopy"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,26 +53,39 @@
         }
     </style>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#go_book_update').on('click',function(){
+			let form = $('#frm');
+			form.attr('action','/MemberSample0629/BlmController?cmd=update');
+			form.submit();
+			
+		});
+		$('#go_book_list').on('click',function(){
+			let form = $('#frm');
+			form.attr('action','/MemberSample0629/BlmController?cmd=list')
+			form.submit();
+			
+		});
+	});
+	</script>
 </head>
 <body>
-<%
-	BookCopy book = (BookCopy) request.getAttribute("book");
-%>
-<form action="book_list.jsp" method="post">
+
+<form action="" method="post" id="frm">
     <table>
         <tr><th colspan="4" id="form">도서 상세</th></tr>
         <tr><th>구분</th><th class="data_ui" colspan="2">데이터입력</th><th>비고</th></tr>
         <tr>
             <td>도서번호</td>
             <td colspan="2">
-            	<input type="text" id="book_seq" name="book_seq" value="<%=book.getBookSeq() %>">
+            	<input type="text" id="book_seq" name="book_seq" value="${book.bookSeq}" readonly>
             </td>
             <td id="message"></td></tr>
         <tr>
         	<td>ISBN</td>
         	<td colspan="2">
-        		<input type="text" id="isbn" name="isbn" value ="<%=book.getIsbn() %>">
+        		<input type="text" id="isbn" name="isbn" value ="${book.isbn}" readonly>
         	</td>
         	<td>
         		<input type="hidden" id="flag" value="false">
@@ -79,25 +94,25 @@
         <tr>
         	<td>도서명</td>
         	<td colspan="2">
-        		<input type="text" id="book_title" name="book_title" value ="<%=book.getTitle() %>">
+        		<input type="text" id="book_title" name="book_title" value ="${book.title}">
         	</td><td></td>
         </tr>
         <tr>
         	<td>저자/역자</td>
         	<td colspan="2">
-        		<input type="text" id="author" name="author" value ="<%=book.getAuthor() %>">
+        		<input type="text" id="author" name="author" value ="${book.author}">
         	</td><td></td>
         </tr>
         <tr>
         	<td>출판사</td>
         	<td colspan="2">
-        		<input type="text" id="publisher" size="35" name="publisher" value ="<%=book.getPublisher() %>">
+        		<input type="text" id="publisher" size="35" name="publisher" value ="${book.publisher}">
         	</td><td></td>
         </tr>
         <tr>
         	<td>출판일</td>
         	<td colspan="2">
-        		<input type="text" id="publish_date" size="35" name="publish_date" value ="<%=book.getPublishDate() %>">
+        		<input type="text" id="publish_date" size="35" name="publish_date" value="<fmt:formatDate value="${book.publishDate}" pattern="yyyy-MM-dd" />">
         	</td>
         	<td></td>
         <tr>
@@ -127,9 +142,9 @@
         <tr>
         <tr>
         	<td colspan="4" id="sending">
-        		<input type="submit" value="도서수정"> 
+        		<input type="submit" value="도서수정" id="go_book_update"> 
         		<input type="reset">
-        		<a href="book_list.jsp"><button>도서리스트</button></a>
+        		<input type="submit" value="도서리스트" id="go_book_list">
         	</td>
         </tr>
     </table>

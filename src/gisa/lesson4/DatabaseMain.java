@@ -13,7 +13,7 @@ import java.util.List;
 public class DatabaseMain {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
         DatabaseMain main = new DatabaseMain();
-//        main.makeTable();
+        main.makeTable();
         main.testStart();
     }
 
@@ -53,7 +53,7 @@ public class DatabaseMain {
     public void makeData() throws SQLException, ClassNotFoundException {
 
         ArrayList<StudentDTO> students = new ArrayList<>();
-        File csv = new File("Abc1115.csv");
+        File csv = new File("C:\\eunbin\\workspace\\src\\gisa\\lesson4\\Abc1115.csv");
         BufferedReader reader;
         String line ;
 

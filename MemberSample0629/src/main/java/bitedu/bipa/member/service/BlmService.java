@@ -27,4 +27,11 @@ public class BlmService {
 		flag = dao.deleteBook(Integer.parseInt(bookSeq));
 		return flag;
 	}
+	
+	public boolean modifyBook(BookCopy copy) {
+		boolean flag = false;
+		flag = dao.updateBook(copy);
+		System.out.println("modify"+copy);
+		return flag;
+	}
 }

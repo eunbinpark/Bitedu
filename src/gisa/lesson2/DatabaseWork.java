@@ -9,8 +9,8 @@ public class DatabaseWork {
     public void insertData(ArrayList<StudentDTO> data) throws SQLException, ClassNotFoundException {
         // DB에 1000개의 record(DTO)를 저장 : 데이터는 만들지 않음
         // 데이터를 받아서 DB 관련 작업을 할 예정
-        System.out.println(data.size());
-        System.out.println(data.get(0));
+//        System.out.println(data.size());
+//        System.out.println(data.get(0));
         this.testConnection();
         this.insert(data);
 

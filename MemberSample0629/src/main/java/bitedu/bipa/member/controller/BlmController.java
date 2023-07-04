@@ -41,6 +41,7 @@ public class BlmController extends HttpServlet {
 		String url = "./manager/book_list.jsp";
 		BlmService blm = new BlmService();
 		boolean isRedirect = false;
+		System.out.println(cmd);
 		if(cmd.equals("list")) {
 			ArrayList<BookCopy> list = blm.searchBookAll();
 			
@@ -95,6 +96,22 @@ public class BlmController extends HttpServlet {
 			request.setAttribute("book", book);
 			url = "./manager/book_detail.jsp";
 		
+		} else if (cmd.equals("update")) {
+			System.out.println("hey");
+			BookCopy book = new BookCopy();
+			book.setBookSeq(Integer.parseInt(request.getParameter("book_seq")));
+			book.setIsbn(request.getParameter("isbn"));
+			book.setTitle(request.getParameter("book_title"));
+			book.setAuthor(request.getParameter("author"));
+			book.setPublisher(request.getParameter("publisher"));
+			book.setPublishDate(Timestamp.valueOf((request.getParameter("publish_date")+" 00:00:00.0")));
+			System.out.println(book);
+			if(blm.modifyBook(book)) {
+				System.out.println("수정");
+			}
+			
+			url="./BlmController";
+			isRedirect=true;
 		}
 		
 		if(!isRedirect) {
