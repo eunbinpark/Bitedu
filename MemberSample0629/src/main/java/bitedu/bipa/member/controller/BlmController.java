@@ -60,7 +60,7 @@ public class BlmController extends HttpServlet {
 			blm.registBook(book);
 			
 		
-			
+		
 			System.out.println("hi");
 			//request.setAttribute("list", book);
 			//url = "./manager/book_list.jsp";
