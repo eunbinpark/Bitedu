@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>페이징</title>
+    <link rel="stylesheet" href="paiging.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome.min.css"
+      type="text/css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <table id="tblTodo">
+        <caption></caption>
+        <colgroup>
+          <col width="10%" />
+          <col width="10%" />
+          <col width="*" />
+          <col width="10%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Title</th>
+            <th>Completed</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="paging">
+        <!-- Icon은 fontawesome에서 가져왔습니다. -->
+        <i class="fa-solid fa-angles-left" id="first_page"></i>
+        <i class="fa-solid fa-angle-left" id="prev_page"></i>
+        <div class="pages">
+          <span class="active">1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+        </div>
+        <i class="fa-solid fa-angle-right" id="next_page"></i>
+        <i class="fa-solid fa-angles-right" id="last_page"></i>
+      </div>
+    </div>
+    <script type="text/javascript" src="paging.js"></script>
+  </body>
+</html>
