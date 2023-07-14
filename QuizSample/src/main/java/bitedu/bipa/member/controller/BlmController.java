@@ -20,7 +20,7 @@ import bitedu.bipa.member.vo.BookCopy;
 /**
  * Servlet implementation class BlmController
  */
-@WebServlet("/BlmController")
+@WebServlet("/action.do")
 public class BlmController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private QuizService quizService;
@@ -109,6 +109,14 @@ public class BlmController extends HttpServlet {
 			}
 			boolean flag = quizService.modifyBook(copy);
 			url = "./BlmController?cmd=list";
+		} else if (cmd.equals("path")){
+			String context = getServletContext().getContextPath();
+			String urls = request.getRequestURL().toString();
+			String uri = request.getRequestURI();
+			System.out.printf("%s \n %s \n %s", context, urls, uri);
+			
+			url = "./path/path.jsp";
+			
 		}
 		
 		if(!isRedirect) {
